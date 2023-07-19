@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendario HTML</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="../Proyecto_Integrador/Proyecto-Integradora/GYM/css/bootstrap.min.css">
+    <script src="../Proyecto_Integrador/Proyecto-Integradora/GYM/js/bootstrap.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Datepicker CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Select CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/css/bootstrap-select.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap 5 JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Datepicker JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    
+    <!-- Bootstrap Select JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.14.0-beta2/dist/js/bootstrap-select.min.js"></script>
+    <script>
+        $(function() {
+            $("#datepicker").datepicker();
+        });
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> 
+        <div class="container-fluid"> 
+          <a class="navbar-brand" href="#" style="color: yellow;">EGOGYM</a> 
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation"> 
+            <span class="navbar-toggler-icon"></span> 
+          </button> 
+          <div class="collapse navbar-collapse" id="navbarScroll"> 
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;"> 
+              <li class="nav-item"> 
+                <a class="nav-link active" aria-current="page" href="#">Home</a> 
+              </li> 
+              <li class="nav-item"> 
+                <a class="nav-link" href="#">Servicios</a> 
+              </li> 
+              <li class="nav-item"> 
+                <a class="nav-link" href="#">Contactanos</a> 
+              </li> 
+            </ul> 
+            <div class=" row"> 
+              <div class="btn-group-sm"> 
+             <button type="button" class="btn btn-warning btn boton" data-bs-toggle="modal" data-bs-target="#registro" style="margin-right: 10px;"> 
+              Ingresar 
+            </button> 
+              </div> 
+            </div> 
+          </div>     
+          </div> 
+        </div> 
+      </nav> 
+     
+      <!-- Modal --> 
+      <div class="modal fade" id="registro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"> 
+        <div class="modal-dialog" role="document"> 
+          <div class="modal-content"> 
+            <div class="modal-header text-center"> 
+              <h4 class="modal-title w-100 font-weight-bold">Sign up</h4> 
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+                <span aria-hidden="true">&times;</span> 
+              </button> 
+            </div> 
+            <div class="modal-body mx-3"> 
+              <div class="md-form mb-5"> 
+                <i class="fas fa-user prefix grey-text"></i> 
+                <input type="text" id="orangeForm-name" class="form-control validate"> 
+                <label data-error="wrong" data-success="right" for="orangeForm-name">Your name</label> 
+              </div> 
+              <div class="md-form mb-5"> 
+                <i class="fas fa-envelope prefix grey-text"></i> 
+                <input type="email" id="orangeForm-email" class="form-control validate"> 
+                <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label> 
+              </div> 
+              <div class="md-form mb-4"> 
+                <i class="fas fa-lock prefix grey-text"></i> 
+                <input type="password" id="orangeForm-pass" class="form-control validate"> 
+                <label data-error="wrong" data-success="right" for="orangeForm-pass">Your password</label> 
+              </div> 
+            </div> 
+            <div class="modal-footer d-flex justify-content-center "> 
+               
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button> 
+              
+              <button type="button" class="btn btn-primary" onclick="alertar('no estas conectado a una BD');"> 
+                Sign up 
+              </button> 
+              <script type="text/javascript"> 
+                  function alertar(texto) { 
+                     alert(texto); 
+                  } 
+              </script> 
+            </div> 
+          </div> 
+        </div> 
+      </div> 
+
+
+      <div class="container mt-4 bg-dark" style="width: 65%; border-radius: 8px; margin-top: 50px; padding-bottom: 25px;">
+        <h1 style="color: goldenrod; text-align: center; margin-top: 45px; padding-top: 15px;" class="mb-5">Agendar Cita</h1>
+        <div class="row justify-content-center mb-4">
+          <div class="col-md-6">
+            <h5 style="color:white">Seleccionar fecha</h5>
+            <div class="input-group date">
+              <input type="text" class="form-control" id="datepicker" placeholder="Seleccione una fecha">
+              <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+            </div>
+          </div>
+          </div>
+          <div class="row justify-content-center">
+          <div class="col-md-6">
+            <h5 style="color: white;">Seleccionar hora</h5>
+            <select class="form-select" id="timeSelect">
+              <option value="">Seleccione una hora</option>
+            </select>
+          </div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-md-6">
+          <button type="submit" class="btn btn-warning" name="calcular" style="margin-top: 25px;">Confirmar</button>
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        // Inicializar el selector de fecha
+        $('#datepicker').datepicker({
+          format: "yyyy-mm-dd",
+          todayBtn: "linked",
+          language: "es",
+          autoclose: true,
+          todayHighlight: true
+        }).on('changeDate', function (e) {
+          // Cuando cambia la fecha, actualizar las horas disponibles
+          updateAvailableHours(e.date);
+        });
+      
+        // Función para actualizar las horas disponibles en el campo de selección de horas
+        function updateAvailableHours(selectedDate) {
+          // Aquí puedes obtener las horas disponibles según la fecha seleccionada.
+          // Por ejemplo, en este caso, se generarán opciones de horas para cada hora de 8 AM a 6 PM.
+          const hoursSelect = $('#timeSelect');
+          hoursSelect.empty();
+          hoursSelect.append('<option value="">Seleccione una hora</option>');
+          
+          const startHour = 8;
+          const endHour = 18;
+          for (let hour = startHour; hour <= endHour; hour++) {
+            const formattedHour = hour.toString().padStart(2, '0') + ':00';
+            hoursSelect.append(`<option value="${formattedHour}">${formattedHour}</option>`);
+          }
+      
+          // Actualizar el selector de horas después de cambiar las opciones
+          hoursSelect.selectpicker('refresh');
+        }
+      
+        // Inicializar el selector de hora
+        $('#timeSelect').selectpicker();
+      </script>
+</body>
+</html>
+
